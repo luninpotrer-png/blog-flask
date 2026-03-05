@@ -11,11 +11,11 @@
     <nav>
         {% if session["usuario"] %}
         <span><p class="usuario">@ {{ session["usuario"] }}</p></span>
-            <a href="/">Inicio</a>
-            <a href="/logout">Cerrar Sesión</a>
+            <a class="crear_post" href="/">Inicio</a>
+            <a class="crear_post" href="/logout">Cerrar Sesión</a>
         {% else %}
-            <a href="/login">Login</a>
-            <a href="/">Inicio</a>
+            <a class="crear_post" href="/login">Login</a>
+            <a class="crear_post" href="/">Inicio</a>
         {% endif %}
     </nav>
     <div class="post_completo">
