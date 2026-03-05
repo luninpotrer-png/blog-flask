@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <p class="titulo_login">Iniciar sesión</p>
+        <p class="subtitulo_login">Ingrese sus datos:</p>
+        <form action="/login" method="POST" onsubmit="return validar()">
+            <input type="text" name="usuario" placeholder="Username" id="name">
+            <input type="password" name="password" placeholder="Password" id="password">
+            <button type="submit">Sign up</button>
+        </form>
+        {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+        <p class="msg_register_bloque">¿Acabas de llegar a LyChat? <a class="msg_register" href="/register">Régistrate</a></p>
+    </div>
+</body>
+    </html>

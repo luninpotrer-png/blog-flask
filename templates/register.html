@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>registro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body class="register">
+    <div class="rster_container">
+        <p class="titulo_reg">Registro</p>
+
+        {% if exist_user %}
+            <p class="exist_user"> {{ exist_user }} </p>
+        {% endif %}
+
+        <form action="/register" method="POST" onsubmit="return validar()">
+            <div class="inputs_register">
+                <input type="text" name="usuario_register" id="name" placeholder="Username">
+                <div class="input_password">
+                    <input type="password" name="password_register" id="password" placeholder="Password">
+                    <button type="button" onclick="TooglePassword('password_register')">👁️</button>
+                </div>
+            </div>
+            <button type="submit">Register</button>
+            <p class="msg_login_bloque">¿Ya eres parte de LyChat? <a class="msg_login" href="/login">Inicia sesión</a></p>
+        </form>
+    </div>
+</body>
+</html>

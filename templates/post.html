@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>{{ post.titulo }}</title>
+</head>
+<body>
+    <nav>
+        {% if session["usuario"] %}
+        <span><p class="usuario">@ {{ session["usuario"] }}</p></span>
+            <a href="/">Inicio</a>
+            <a href="/logout">Cerrar Sesión</a>
+        {% else %}
+            <a href="/login">Login</a>
+            <a href="/">Inicio</a>
+        {% endif %}
+    </nav>
+    <div class="post_completo">
+        <p class="titulo_post">{{ post.titulo }}</p>
+        <p>{{ post.autor.username }} - {{ post.fecha }}</p>
+        <p>{{ post.contenido }}</p>
+        {% if session["usuaro"] == post.autor.username %}
+            <a href="/eliminar/{{post.id}}">Eliminar Post</a>
+        {% endif %}
+         <a href="/">Volver</a>
+    </div>
+</body>
+</html>

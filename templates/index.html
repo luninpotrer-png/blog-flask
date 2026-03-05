@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+    <nav>
+        {% if session["usuario"] %}
+        <span><p class="usuario">@ {{ session["usuario"] }}</p></span>
+            <div class="links_index">
+                <a class="crear_post" href="/crear">Nuevo Post</a>
+                <a class="cerrar_sesion" href="/logout">Cerrar Sesión</a>
+            </div>
+        {% else %}
+            <a class="cerrar_sesion" href="/login">Login</a>
+            <a class="cerrar_sesion" href="/register">Registro</a>
+        {% endif %}
+    </nav>
+    <div class="posts">
+        {% for post in posts %}
+            <div class="post_card">
+                <h2>{{ post.titulo }}</h2>
+                <p class="info_index">{{ post.autor.username }} - {{ post.fecha }}</p>
+                <a class="links_index" href="/post/{{ post.id }}">Leer más</a>
+                {%if session["usuario"] == post.autor.username %}
+                    <a class="links_index" href="/eliminar/{{ post.id }}">Eliminar</a>
+                {% endif %}
+            </div>
+        {% else %}
+            <p>No hay posts aun</p>
+        {% endfor %}
+    </div>
+</body>
+</html>

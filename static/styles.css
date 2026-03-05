@@ -1,0 +1,210 @@
+body {
+    background: #f5f5f5;
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+}
+/*INPUTS DE REGSTERS*/
+.rster_container {
+    color: #212529;
+    background-color: #ffffff;
+    border-radius: 15px;
+    align-content: center;
+    align-items: center;
+    width: 500px;
+
+}
+input {
+    width: 61%;
+    border: none;
+    padding: 20px;
+    background-color: #f1f3f5;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    margin-left: 70px;
+}
+button {
+    background-color: #4361ee;
+    margin: 10px 30px 10px 70px;
+    border: none;
+    width: 70%;
+    padding: 15px;
+    font-family: 'Inter', sans-serif;
+    border-radius: 25px;
+    color: #212529;
+}
+button:hover {
+    background-color: #3f37c9;
+}
+.titulo_reg {
+    font-size: 40px;
+    display: flex;
+    margin: 30px 10px 50px 160px;
+}
+.inputs_register::placeholder {
+    background-color: #f1f3f5;
+}
+.input_password {
+    position: relative;
+    width: 80%;
+    border: none;
+}
+.input_password input{
+    width: 70%;
+    padding-right: 45px;
+    border: none
+}
+.input_password button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    width: auto;
+    margin: 0;
+}
+.msg_login_bloque {
+    margin-bottom: 40px;
+    margin-left: 70px;
+    color: #6c757d;
+}
+.msg_login {
+    align-items: center;
+    color: #4361ee;
+}
+.exist_user {
+    color: #ef4444;
+    margin-left: 70px;
+}
+/*LOGIN*/
+.container {
+    color: #212529;
+    background-color: #ffffff;
+    border-radius: 15px;
+    align-content: center;
+    align-items: center;
+    width: 500px;
+}
+.titulo_login {
+    font-family: 'Inter', sans-serif;
+    font-size: 40px;
+    display: flex;
+    margin: 30px 10px 40px 120px;
+    color: #212529;
+    text-align: center;
+}
+.error {
+    color: #ef4444;
+    margin-top: 0;
+    margin-left: 140px;
+}
+.msg_register_bloque {
+    margin-left: 90px;
+    margin-bottom: 40px;
+    color: #6c757d;
+}
+.msg_register {
+    color: #4361ee;
+    align-items: center;
+}
+.subtitulo_login {
+    margin-left: 70px;
+    color: #6c757d;
+}
+/*INDEX*/
+.posts {
+    max-width: 900px;
+    display: grid;
+    background: #ffffff;
+    padding: 25px 40px 0 100px;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+    margin:100px auto 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.post_card {
+    border-bottom: 1px solid #e9ecef;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 25px;
+}
+.info_index {
+    color: #6c757d;
+}
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #1e1e2e;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    margin-bottom: auto;
+    padding: 15px 40px;
+    color: white;
+}
+.links_index {
+    display: flex;
+    gap: 20px;
+}
+.crear_post {
+    color: white;
+}
+.cerrar_sesion{
+    color: white;
+}
+.usuario {
+    background-color: #2d2d44;
+    padding: 5px 12px;
+    margin: 0;
+    border-radius: 10px;
+    width: 110%;
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
+}
+/*CREAR POST*/
+.crear_container {
+    max-width: 600vh;
+    margin: 10px auto;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.5);
+}
+.crear_post_title {
+    text-align: center;
+    font-size: 40px;
+    color: #0d0d0d;
+    margin-right: 40px;
+}
+textarea {
+    border: none;
+    background-color: #f1f3f5;
+    border-left: 90px;
+    resize: none;
+    overflow: hidden;
+    min-height: 100px;
+    width: 100%;
+}
+/*POSTS*/
+.post_completo {
+    align-items: center;
+    border: 1px solid rgba(0,0,0,0.6);
+    padding: 10px 30px 10px 30px;
+    margin: 80px 30px 10px 30px;
+    max-width: 500px;
+    border-radius: 15px;
+}
+.titulo_post {
+    font-size: 40px;
+    text-align: center;
+    color: #212529;
+    font-family: 'Playfair Display', serif;
+}
