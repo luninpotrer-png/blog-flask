@@ -172,7 +172,7 @@ button:hover {
     color: var(--bg-texto-secundario);
 }
 nav {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -264,7 +264,7 @@ textarea {
         margin-top: auto;
     }
     .post_completo {
-        margin-top: 200px;
+        margin-top: auto;
     }
 }
 @media (max-width: 480px) {
@@ -275,6 +275,6 @@ textarea {
         margin-top: auto;
     }
     .post_completo {
-        margin-top: 200px;
+        margin-top: auto;
     }
 }
