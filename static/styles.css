@@ -256,6 +256,9 @@ textarea {
     width: 40px;
     padding: 2px;
 }
+.inouts input, .inputs textarea, input, textarea{
+    var(--bg-texto-principal);
+}
 /*DISPLAY*/
 @media (max-width: 1280px) {
     nav {padding: 14px 25px;}
