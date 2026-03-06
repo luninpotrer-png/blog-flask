@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>registro</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </head>
 <body class="register">
     <div class="rster_container">
@@ -27,5 +27,6 @@
             <p class="msg_login_bloque">¿Ya eres parte de LyChat? <a class="msg_login" href="/login">Inicia sesión</a></p>
         </form>
     </div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

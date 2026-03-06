@@ -2,12 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <title>CrearPost</title>
 </head>
+<nav>
+        <span><p class="usuario">@ {{ session["usuario"] }}</p></span>
+            <a class="crear_post" href="/">Inicio</a>
+            <a class="crear_post" href="/logout">Cerrar Sesión</a>
+
+        <button class="btn_dark" type="button" onclick="CambiarTema()">🌙</button>
+    </nav>
 <body>
     <div class="crear_container">
     <p class="crear_post_title">CREAR POST</p>
@@ -16,8 +23,10 @@
             <input type="text" name="titulo" placeholder="ingrese su titulo" id="titulo">
             <textarea name="contenido" placeholder="ingrese su contenido" rows="6" id="contenido"></textarea>
             <button type="submit">Subir</button>
+            <a class="msg_register" href="/">Volver</a>
         </form>
     </div>
     </div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

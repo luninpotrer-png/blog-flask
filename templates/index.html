@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -16,9 +17,14 @@
                 <a class="cerrar_sesion" href="/logout">Cerrar Sesión</a>
             </div>
         {% else %}
+        <div class="links_index">
             <a class="cerrar_sesion" href="/login">Login</a>
             <a class="cerrar_sesion" href="/register">Registro</a>
         {% endif %}
+        </div>
+        <button class="btn_dark" type="button" onclick="CambiarTema()">🌙</button>
+
+
     </nav>
     <div class="posts">
         {% for post in posts %}
@@ -34,5 +40,6 @@
             <p>No hay posts aun</p>
         {% endfor %}
     </div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

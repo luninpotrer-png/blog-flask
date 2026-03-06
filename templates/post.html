@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -17,15 +18,17 @@
             <a class="crear_post" href="/login">Login</a>
             <a class="crear_post" href="/">Inicio</a>
         {% endif %}
+        <button class="btn_dark" type="button" onclick="CambiarTema()">🌙</button>
     </nav>
     <div class="post_completo">
         <p class="titulo_post">{{ post.titulo }}</p>
-        <p>{{ post.autor.username }} - {{ post.fecha }}</p>
-        <p>{{ post.contenido }}</p>
+        <p class="descripcion">{{ post.autor.username }} - {{ post.fecha }}</p>
+        <p class="contenido_post">{{ post.contenido }}</p>
         {% if session["usuaro"] == post.autor.username %}
             <a href="/eliminar/{{post.id}}">Eliminar Post</a>
         {% endif %}
          <a href="/">Volver</a>
     </div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
