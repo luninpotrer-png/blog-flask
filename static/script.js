@@ -24,3 +24,14 @@ function validar_crear() {
     }
     return true;
 }
+function CambiarTema() {
+    document.body.classList.toggle("dark");
+    localStorage.setItem('dark', document.body.classList.contains('dark'));
+    const btn = document.querySelector(".btn_dark");
+    btn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+}
+if (localStorage.getItem("dark") === "true") {
+        document.body.classList.add("dark");
+        const btn = document.querySelector(".btn_dark");
+        if (btn) btn.textContent = "☀️";
+    }
