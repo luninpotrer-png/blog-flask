@@ -35,3 +35,6 @@ if (localStorage.getItem("dark") === "true") {
         const btn = document.querySelector(".btn_dark");
         if (btn) btn.textContent = "☀️";
     }
+function MostrarMenu() {
+    document.querySelector(".menu").classList.toggle("activo")
+}

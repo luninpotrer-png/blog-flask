@@ -1,9 +1,10 @@
+/*VARIABLES Y TEMAs*/
 :root {
     --bg-body: #f5f5f5;
     --bg-nav: #1e1e2e;
     --bg-sombra: rgba(0,0,0,0.5);
     --bg-texto-principal: #212529;
-    --bg-texto-secundario:#6c757d ;
+    --bg-texto-secundario: #6c757d;
     --bg-boton: #4361ee;
     --bg-hover: #3f37c9;
     --bg-input: #f1f3f5;
@@ -12,7 +13,7 @@
     --bg-links: #4361ee;
     --bg-borde: #e9ecef;
     --bg-title-post: #0d0d0d;
-    --bg-contenido-post: #0d0d0d
+    --bg-contenido-post: #0d0d0d;
 }
 .dark {
     --bg-body: #0d0d0d;
@@ -30,6 +31,8 @@
     --bg-title-post: #ffffff;
     --bg-contenido-post: #e9ecef;
 }
+
+/*BASE*/
 body {
     background: var(--bg-body);
     display: flex;
@@ -39,16 +42,6 @@ body {
     justify-content: center;
     font-family: 'Inter', sans-serif;
 }
-/*INPUTS DE REGSTERS*/
-.rster_container {
-    color: var(--bg-texto-principal);
-    background-color: var(--bg-container);
-    border-radius: 15px;
-    align-content: center;
-    align-items: center;
-    width: 500px;
-
-}
 input {
     width: 61%;
     border: none;
@@ -57,6 +50,19 @@ input {
     margin-bottom: 10px;
     border-radius: 15px;
     margin-left: 70px;
+    color: var(--bg-contenido-post);
+}
+textarea {
+    margin-left: 11%;
+    border: none;
+    background-color: var(--bg-input);
+    border-left: 90px;
+    resize: none;
+    overflow: hidden;
+    min-height: 100px;
+    width: 67%;
+    color: var(--bg-contenido-post);
+    border-radius: 14px;
 }
 button {
     background-color: var(--bg-boton);
@@ -71,6 +77,82 @@ button {
 button:hover {
     background-color: var(--bg-hover);
 }
+.hamburger, .btn_dark {
+    background: none;
+    border: none;
+    width: auto;
+    margin: 0;
+    padding: 5px;
+    cursor: pointer;
+    color: white;
+}
+/*NAV*/
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-nav);
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    margin-bottom: auto;
+    padding: 15px 40px;
+    color: white;
+}
+.usuario {
+    background-color: #2d2d44;
+    padding: 5px 12px;
+    margin: 0;
+    border-radius: 10px;
+    width: 110%;
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
+}
+.links_index {
+    display: flex;
+    gap: 20px;
+}
+.links_nav {
+    display: flex;
+    gap: 20px;
+}
+.crear_post {
+    color: white;
+}
+.cerrar_sesion {
+    color: white;
+}
+.btn_dark {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    width: 40px;
+    padding: 2px;
+    margin: 0;
+}
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    width: auto;
+    padding: 5px;
+    margin: 0;
+    cursor: pointer;
+}
+
+/*REGISTER*/
+.rster_container {
+    color: var(--bg-texto-principal);
+    background-color: var(--bg-container);
+    border-radius: 15px;
+    align-content: center;
+    align-items: center;
+    width: 500px;
+}
 .titulo_reg {
     font-size: 40px;
     display: flex;
@@ -84,10 +166,10 @@ button:hover {
     width: 80%;
     border: none;
 }
-.input_password input{
+.input_password input {
     width: 70%;
     padding-right: 45px;
-    border: none
+    border: none;
 }
 .input_password button {
     position: absolute;
@@ -99,7 +181,7 @@ button:hover {
     cursor: pointer;
     font-size: 18px;
     width: auto;
-    margin: 0;
+    margin: 0 24px;
 }
 .msg_login_bloque {
     margin-bottom: 40px;
@@ -114,6 +196,7 @@ button:hover {
     color: #ef4444;
     margin-left: 70px;
 }
+
 /*LOGIN*/
 .container {
     color: var(--bg-texto-principal);
@@ -131,6 +214,10 @@ button:hover {
     color: var(--bg-texto-principal);
     text-align: center;
 }
+.subtitulo_login {
+    margin-left: 70px;
+    color: var(--bg-texto-secundario);
+}
 .error {
     color: #ef4444;
     margin-top: 0;
@@ -145,19 +232,16 @@ button:hover {
     color: var(--bg-links);
     align-items: center;
 }
-.subtitulo_login {
-    margin-left: 70px;
-    color: var(--bg-texto-secundario);
-}
+
 /*INDEX*/
 .posts {
     max-width: 900px;
     display: grid;
     background: var(--bg-container);
-    padding: 25px 40px 0 100px;
+    padding: 25px 40px 0 40px;
     border-radius: 12px;
     border: 1px solid var(--bg-borde);
-    margin:100px auto 0 auto;
+    margin: 100px auto 0 auto;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
@@ -171,39 +255,11 @@ button:hover {
 .info_index {
     color: var(--bg-texto-secundario);
 }
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: var(--bg-nav);
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    margin-bottom: auto;
-    padding: 15px 40px;
-    color: white;
+.no_post {
+    color: var(--bg-title-post);
+    text-align: center;
 }
-.links_index {
-    display: flex;
-    gap: 20px;
-}
-.crear_post {
-    margin-left: 60px;
-    color: white;
-}
-.cerrar_sesion{
-    color: white;
-}
-.usuario {
-    background-color: #2d2d44;
-    padding: 5px 12px;
-    margin: 0;
-    border-radius: 10px;
-    width: 110%;
-    cursor: pointer;
-    font-family: 'Playfair Display', serif;
-}
+
 /*CREAR POST*/
 .crear_container {
     max-width: 600vh;
@@ -211,23 +267,16 @@ nav {
     padding: 40px;
     border-radius: 12px;
     border: 1px solid var(--bg-sombra);
+    align-items: center;
 }
 .crear_post_title {
     text-align: center;
     font-size: 40px;
     color: var(--bg-texto-principal);
-    margin-right: 40px;
+    margin-right: auto;
 }
-textarea {
-    border: none;
-    background-color: var(--bg-input);
-    border-left: 90px;
-    resize: none;
-    overflow: hidden;
-    min-height: 100px;
-    width: 100%;
-}
-/*POSTS*/
+
+/*VER POST*/
 .post_completo {
     align-items: center;
     border: 1px solid var(--bg-sombra);
@@ -248,37 +297,203 @@ textarea {
 .contenido_post {
     color: var(--bg-contenido-post);
 }
-.btn_dark {
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    width: 40px;
-    padding: 2px;
+.reacciones {
+    display: flex;
+    gap: 20px;
+    margin: 15px 0;
 }
-.inputs input, .inputs textarea, input, textarea {
-    var(--bg-texto-principal);
+.reacciones a {
+    font-size: 18px;
+    text-decoration: none;
 }
-/*DISPLAY*/
+
+/* ACCIONES POST */
+.acciones_post {
+    display: flex;
+    gap: 15px;
+    margin: 10px 0;
+}
+.btn_eliminar {
+    color: #ef4444;
+}
+.btn_volver {
+    color: var(--bg-links);
+}
+
+/* COMENTARIOS */
+.comentarios {
+    margin-top: 30px;
+    border-top: 1px solid var(--bg-borde);
+    padding-top: 20px;
+}
+.comentarios_titulo {
+    color: var(--bg-texto-principal);
+    margin-bottom: 15px;
+}
+.comentario_card {
+    border-bottom: 1px solid var(--bg-borde);
+    padding: 10px 0;
+}
+.comentario_autor {
+    color: var(--bg-texto-secundario);
+    font-size: 13px;
+    margin: 0 0 5px 0;
+}
+.comentario_contenido {
+    color: var(--bg-texto-principal);
+    margin: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+.sin_comentarios {
+    color: var(--bg-texto-secundario);
+}
+.msg_comentario {
+    color: var(--bg-texto-secundario);
+}
+
+
+/*MEDIA*/
 @media (max-width: 1280px) {
-    nav {padding: 14px 25px;}
+    nav { padding: 14px 25px; }
     .posts {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
         margin-top: auto;
     }
     .post_completo {
-        margin-top: auto;
+        margin-top: 200px;
     }
 }
 @media (max-width: 480px) {
-    nav {padding: 14px 25px}
+    nav {
+        gap: 10px;
+        padding: 10px;
+        font-size: 15px;
+    }
     .posts {
         grid-template-columns: 1fr;
         align-items: center;
         margin-top: auto;
     }
     .post_completo {
-        margin-top: auto;
+        margin-top: 200px;
     }
-
+    .links_nav {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: auto;
+        background: var(--bg-nav);
+        flex-direction: column;
+        padding: 15px;
+        gap: 30px;
+        width: 150px;
+    }
+    .links_nav.activo {
+        display: flex;
+    }
+    .hamburger {
+        display: block;
+    }
+    /*crear.post*/
+    .crear_container {
+    max-width: 600vh;
+    margin: 10px auto;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--bg-sombra);
+    align-items: center;
+    }
+    textarea {
+        margin: auto;
+    }
+    .titulo_crear input {
+        margin-right: 100px;
+    }
+    /*REGISTER*/
+    .rster_container {
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        width: 90%;
+        max-width: 500px;
+        margin: 0;
+    }
+    .titulo_reg {
+        margin-left: 20%;
+        text-align: center;
+    }
+    input {
+        width: 78%;
+        margin: 0 auto 10px auto;
+        display: block;
+    }
+    .input_password {
+        width: 100%;
+        margin: 0 auto 10px 0.5%
+    }
+    .msg_login {
+        font-size: 20px;
+        margin-left: 2%;
+    }
+    .msg_login_bloque {
+        margin-left: 2%;
+        position: static;
+    }
+    /*LOGIN*/
+    .container {
+        width: 90%;
+        align-content: center;
+        align-items: center;
+        max-width: 500px;
+        margin: 0;
+    }
+    .titulo_login {
+        margin-left: 10%;
+        text-align: center;
+    }
+    .subtitulo_login {
+        margin: 5%;
+    }
+    button {
+        width: 68%;
+        margin-left: 5%;
+    }
+    .button_login {
+        margin-left: 13%;
+    }
+    .msg_register_bloque {
+        margin-left: 14%;
+        position: static;
+    }
+    .msg_register {
+        font-size: 20px;
+        margin-left: 26%;
+    }
+    /*CREARPOST*/
+    .submit_crear {
+        margin-left: 15%;
+    }
+    .msg_register {
+        font-size: 20px;
+        margin-left: 40%;
+    }
+    .post_card {
+        max-width: 100%;
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+    .post_completo {
+        margin: 80px 15px 10px 15px;
+        padding: 10px 15px;
+        max-width: 100%;
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+    .titulo_post {
+        font-size: 28px;
+    }
+    .reacciones {
+        gap: 15px;
+    }
 }

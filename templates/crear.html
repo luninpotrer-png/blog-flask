@@ -9,10 +9,20 @@
     <title>CrearPost</title>
 </head>
 <nav>
-        <span><p class="usuario">@ {{ session["usuario"] }}</p></span>
-            <a class="crear_post" href="/">Inicio</a>
-            <a class="crear_post" href="/logout">Cerrar Sesión</a>
-
+        {% if session["usuario"] %}
+            <button type="button" class="hamburger" onclick="MostrarMenu()">☰</button>
+            <span><p class="usuario">@ {{ session["usuario"] }}</p></span>
+            <div class="links_nav menu">
+                <a class="crear_post" href="/crear">Nuevo Post</a>
+                <a class="cerrar_sesion" href="/logout">Cerrar Sesión</a>
+            </div>
+        {% else %}
+            <button type="button" class="hamburger" onclick="MostrarMenu()">☰</button>
+            <div class="links_nav menu">
+                <a class="cerrar_sesion" href="/login">Login</a>
+                <a class="cerrar_sesion" href="/register">Registro</a>
+            </div>
+        {% endif %}
         <button class="btn_dark" type="button" onclick="CambiarTema()">🌙</button>
     </nav>
 <body>
@@ -20,10 +30,10 @@
     <p class="crear_post_title">CREAR POST</p>
     <div class="inputs">
         <form action="/crear" method="POST" onsubmit="return validar_crear()">
-            <input type="text" name="titulo" placeholder="ingrese su titulo" id="titulo">
-            <textarea name="contenido" placeholder="ingrese su contenido" rows="6" id="contenido"></textarea>
-            <button type="submit">Subir</button>
-            <a class="msg_register" href="/">Volver</a>
+            <input class="titulo_crear" type="text" name="titulo" placeholder="ingrese su titulo" id="titulo">
+            <textarea class="areatext" name="contenido" placeholder="ingrese su contenido" rows="6" id="contenido"></textarea>
+            <button class="submit_crear" type="submit">Subir</button>
+            <a class="volver_crear" href="/">Volver</a>
         </form>
     </div>
     </div>

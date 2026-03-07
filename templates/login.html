@@ -14,7 +14,7 @@
         <form action="/login" method="POST" onsubmit="return validar()">
             <input type="text" name="usuario" placeholder="Username" id="name">
             <input type="password" name="password" placeholder="Password" id="password">
-            <button type="submit">Sign up</button>
+            <button class="button_login" type="submit">Sign up</button>
         </form>
         {% if error %}
                 <p class="error">{{ error }}</p>

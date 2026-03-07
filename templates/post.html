@@ -11,24 +11,64 @@
 <body>
     <nav>
         {% if session["usuario"] %}
-        <span><p class="usuario">@ {{ session["usuario"] }}</p></span>
-            <a class="crear_post" href="/">Inicio</a>
-            <a class="crear_post" href="/logout">Cerrar Sesión</a>
+            <button type="button" class="hamburger" onclick="MostrarMenu()">☰</button>
+            <span><p class="usuario">@ {{ session["usuario"] }}</p></span>
+            <div class="links_nav menu">
+                <a class="crear_post" href="/crear">Nuevo Post</a>
+                <a class="cerrar_sesion" href="/logout">Cerrar Sesión</a>
+            </div>
         {% else %}
-            <a class="crear_post" href="/login">Login</a>
-            <a class="crear_post" href="/">Inicio</a>
+            <button type="button" class="hamburger" onclick="MostrarMenu()">☰</button>
+            <div class="links_nav menu">
+                <a class="cerrar_sesion" href="/login">Login</a>
+                <a class="cerrar_sesion" href="/register">Registro</a>
+            </div>
         {% endif %}
         <button class="btn_dark" type="button" onclick="CambiarTema()">🌙</button>
     </nav>
+
     <div class="post_completo">
         <p class="titulo_post">{{ post.titulo }}</p>
         <p class="descripcion">{{ post.autor.username }} - {{ post.fecha }}</p>
         <p class="contenido_post">{{ post.contenido }}</p>
-        {% if session["usuaro"] == post.autor.username %}
-            <a href="/eliminar/{{post.id}}">Eliminar Post</a>
-        {% endif %}
-         <a href="/">Volver</a>
+
+        <div class="reacciones">
+            <a href="/reaccion/{{ post.id }}/like">👍 {{ post.reacciones|selectattr('tipo','eq','like')|list|length }}</a>
+            <a href="/reaccion/{{ post.id }}/dislike">👎 {{ post.reacciones|selectattr('tipo','eq','dislike')|list|length }}</a>
+            <a href="/reaccion/{{ post.id }}/corazon">❤️ {{ post.reacciones|selectattr('tipo','eq','corazon')|list|length }}</a>
+        </div>
+
+        <div class="acciones_post">
+            {% if session["usuario"] == post.autor.username %}
+                <a class="btn_eliminar" href="/eliminar/{{ post.id }}">Eliminar</a>
+            {% endif %}
+            <a class="btn_volver" href="/">Volver</a>
+        </div>
+
+        <!-- COMENTARIOS -->
+        <div class="comentarios">
+            <h3 class="comentarios_titulo">Comentarios</h3>
+
+            {% if session["usuario"] %}
+            <form action="/comentar/{{ post.id }}" method="POST">
+                <textarea name="contenido" placeholder="Escribe un comentario..." rows="3"></textarea>
+                <button type="submit">Comentar</button>
+            </form>
+            {% else %}
+                <p class="msg_comentario"><a href="/login">Inicia sesión</a> para comentar</p>
+            {% endif %}
+
+            {% for comentario in post.comentarios %}
+                <div class="comentario_card">
+                    <p class="comentario_autor">{{ comentario.autor.username }} - {{ comentario.fecha }}</p>
+                    <p class="comentario_contenido">{{ comentario.contenido }}</p>
+                </div>
+            {% else %}
+                <p class="sin_comentarios">No hay comentarios aún</p>
+            {% endfor %}
+        </div>
     </div>
-<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

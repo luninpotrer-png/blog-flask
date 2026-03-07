@@ -2,29 +2,29 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
     <title>Blog</title>
 </head>
 <body>
     <nav>
         {% if session["usuario"] %}
-        <span><p class="usuario">@ {{ session["usuario"] }}</p></span>
-            <div class="links_index">
+            <button type="button" class="hamburger" onclick="MostrarMenu()">☰</button>
+            <span><p class="usuario">@ {{ session["usuario"] }}</p></span>
+            <div class="links_nav menu">
                 <a class="crear_post" href="/crear">Nuevo Post</a>
                 <a class="cerrar_sesion" href="/logout">Cerrar Sesión</a>
             </div>
         {% else %}
-        <div class="links_index">
-            <a class="cerrar_sesion" href="/login">Login</a>
-            <a class="cerrar_sesion" href="/register">Registro</a>
+            <button type="button" class="hamburger" onclick="MostrarMenu()">☰</button>
+            <div class="links_nav menu">
+                <a class="cerrar_sesion" href="/login">Login</a>
+                <a class="cerrar_sesion" href="/register">Registro</a>
+            </div>
         {% endif %}
-        </div>
         <button class="btn_dark" type="button" onclick="CambiarTema()">🌙</button>
-
-
     </nav>
     <div class="posts">
         {% for post in posts %}
@@ -32,14 +32,11 @@
                 <h2>{{ post.titulo }}</h2>
                 <p class="info_index">{{ post.autor.username }} - {{ post.fecha }}</p>
                 <a class="links_index" href="/post/{{ post.id }}">Leer más</a>
-                {%if session["usuario"] == post.autor.username %}
-                    <a class="links_index" href="/eliminar/{{ post.id }}">Eliminar</a>
-                {% endif %}
             </div>
         {% else %}
-            <p>No hay posts aun</p>
+            <p class="no_post">No hay posts aun</p>
         {% endfor %}
     </div>
-<script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
