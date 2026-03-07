@@ -44,6 +44,9 @@ def crear():
         return redirect("/login")
     if request.method == "POST":
         autor = Usuario.query.filter_by(username=session["usuario"]).first()
+        if not autor:
+            session.clear()
+            return redirect("/login")
         nuevo_post = Post(
             titulo = request.form["titulo"],
             contenido = request.form["contenido"],
