@@ -1,6 +1,4 @@
-/* ============================================
-   VARIABLES Y TEMA
-   ============================================ */
+/*VARIABLES Y TEMA*/
 :root {
     --bg-body: #f5f5f5;
     --bg-nav: #1e1e2e;
@@ -34,9 +32,7 @@
     --bg-contenido-post: #e9ecef;
 }
 
-/* ============================================
-   BASE
-   ============================================ */
+/*BASE*/
 * {
     box-sizing: border-box;
 }
@@ -88,9 +84,7 @@ button:hover {
     background-color: var(--bg-hover);
 }
 
-/* ============================================
-   NAV
-   ============================================ */
+/*NAV*/
 nav {
     position: fixed;
     top: 0;
@@ -147,9 +141,7 @@ nav {
     cursor: pointer;
 }
 
-/* ============================================
-   REGISTER
-   ============================================ */
+/*REGISTER*/
 .rster_container {
     color: var(--bg-texto-principal);
     background-color: var(--bg-container);
@@ -202,9 +194,7 @@ nav {
     margin: 10px 0;
 }
 
-/* ============================================
-   LOGIN
-   ============================================ */
+/*LOGIN*/
 .container {
     color: var(--bg-texto-principal);
     background-color: var(--bg-container);
@@ -239,9 +229,7 @@ nav {
     color: var(--bg-links);
 }
 
-/* ============================================
-   INDEX
-   ============================================ */
+/*INDEX*/
 .posts {
     max-width: 900px;
     display: grid;
@@ -275,9 +263,7 @@ nav {
     margin-right: 10px;
 }
 
-/* ============================================
-   CREAR POST
-   ============================================ */
+/* CREAR POST*/
 .crear_container {
     width: 90%;
     max-width: 600px;
@@ -294,9 +280,7 @@ nav {
     margin: 0 0 30px 0;
 }
 
-/* ============================================
-   VER POST
-   ============================================ */
+/* VER POST*/
 .post_completo {
     border: 1px solid var(--bg-sombra);
     padding: 30px;
@@ -347,9 +331,7 @@ nav {
     text-decoration: none;
 }
 
-/* ============================================
-   COMENTARIOS
-   ============================================ */
+/*COMENTARIOS*/
 .comentarios {
     margin-top: 30px;
     border-top: 1px solid var(--bg-borde);
@@ -389,9 +371,7 @@ nav {
     color: var(--bg-texto-secundario);
 }
 
-/* ============================================
-   RESPONSIVE
-   ============================================ */
+/*RESPONSIVe*/
 @media (max-width: 1280px) {
     nav { padding: 14px 25px; }
     .posts {
